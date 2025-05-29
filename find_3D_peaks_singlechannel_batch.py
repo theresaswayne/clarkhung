@@ -10,7 +10,6 @@
 
 # uses https://imagej.net/plugins/trackmate/detectors/difference-of-gaussian 
 # KNOWN ISSUES: There is no ROIset saved if there is only 1 peak
-# TODO: Option for background subtraction, subpixel localization, merge results files
 
 
 from fiji.plugin.trackmate.detection import DogDetector
@@ -176,7 +175,7 @@ def run():
 	
 	# save log
 	IJ.selectWindow("Log")
-	IJ.saveAs("Text", os.path.join(dstDir, "Log.txt"))
+	IJ.saveAs("Text", os.path.join(dstDir, "Counts.txt"))
 	
 	# clean up
 	IJ.run("Close All", "")

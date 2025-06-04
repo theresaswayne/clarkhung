@@ -33,13 +33,15 @@ run("Bio-Formats Macro Extensions"); // support native microscope files
 // ---- Run ----
 
 print("Starting");
+time = getTime();
+
 processFolder(inputDir, outputDir, fileSuffix, tileSize);
 while (nImages > 0) { // clean up open images
 	selectImage(nImages);
 	close(); 
 }
 setBatchMode(false);
-print("Finished");
+print("Finished in", (getTime() - time)/60, " sec");
 
 
 // ---- Functions ----
